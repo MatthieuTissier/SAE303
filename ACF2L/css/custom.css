@@ -167,7 +167,6 @@ header .navbar:after{
 	right: 0;
 	height: 20px;
 	bottom: -16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	z-index: 100;
 }
 
@@ -319,7 +318,6 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: 0px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	transform: rotate(180deg);
 	z-index: 1;
 }
@@ -458,7 +456,6 @@ header .navbar-collapse.collapse{
 	bottom: -16px;
 	left: 0;
 	right: 0;
-	background: url(../images/wave-bg3.png) repeat-x;
 	z-index: 1;
 }
 
@@ -575,7 +572,6 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: 0px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	transform: rotate(180deg);
 	z-index: 1;
 }
@@ -707,7 +703,6 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: -16px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	z-index: 1;
 }
 
@@ -766,14 +761,13 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: 0px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	transform: rotate(180deg);
 }
 
 .faculty-single{
 	text-align: center;
 	background: #fff;
-	padding: 40px 30px;
+	padding: 30px;
 	border-radius: 10px;
 	margin-bottom: 30px;
 }
@@ -856,7 +850,6 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: -16px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	z-index: 1;
 }
 
@@ -1006,7 +999,6 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: 0px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	transform: rotate(180deg);
 }
 	
@@ -1089,7 +1081,6 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: -16px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	z-index: 1;
 }
 
@@ -1158,7 +1149,6 @@ header .navbar-collapse.collapse{
 	right: 0;
 	bottom: 0px;
 	height: 16px;
-	background: url(../images/wave-bg3.png) repeat-x;
 	transform: rotate(180deg);
 }
 
