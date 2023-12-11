@@ -1,12 +1,8 @@
 <?php
 
-require "poo_traitement.php";
+require "account.php";
 
-$exemple1 = new Traitement("personne");
-
-$sql = "Select * from Personne";
-
-$resultat = $exemple1->requete($sql);
-
-foreach ($resultat as $elem)
-    echo $elem['nom'].'<br />'.$elem['adresse'].'<br />'.$elem['tel'].'<br />';
+$traitacc = new Traitement("accounts");
+$test = new Account("Jean", "Test", "1212122    ", "lebronjames@laposte.fr" , "0610121012", hash("sha256", "quoifeur"));
+cho($test -> create($traitacc, Account::getRows()));
+print_r(account::verify($traitacc, "1212122", "quoifeur"));

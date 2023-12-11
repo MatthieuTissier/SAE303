@@ -25,7 +25,7 @@ class Traitement extends Model {
 		return $query->fetchAll();
 	}
 	
-	public function find(int $id) {
+	public function find(string $id) {
     // Exécuter la requête
     return $this->requete("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
 	}
@@ -47,28 +47,17 @@ class Traitement extends Model {
 		return $this->requete("SELECT * FROM {$this->table} WHERE $liste_champs", $valeurs)->fetchAll();
 	}
 	
-	public function insert(array $model) {
-		$champs = [];
-		$inter = [];
-		$valeurs = [];
-
-		//Boucler pour éclater le tableau
-		foreach($model as $champ => $valeur){
-			
-			
-			if($valeur !== null && $champ != 'db' && $champ != 'table'){
-				$champs[] = $champ;
-				$inter[] = "?";
-				$valeurs[] = $valeur;
-			}
-    }
+	public function insert(array $valeurs, array $colomns) {
+		foreach($valeurs as $valeur){
+			$valeur = "'".$valeur."'";
+		}
 
     //Transformer le tableau "champs" en une chaine de caractères
-    $liste_champs = implode(', ', $champs);
-    $liste_inter = implode(', ', $inter);
+    $liste_champs = implode(', ', $colomns);
+    $liste_inter = implode(', ', $valeurs);
 
     // Exécuter la requête
-    return $this->requete('INSERT INTO '.$this->table.' ('. $liste_champs.')VALUES('.$liste_inter.')', $valeurs);
+    return $this->requete('INSERT INTO '.$this->table.' ('. $liste_champs.')VALUES('.$liste_inter.')');
 	}
 	
 	public function delete(int $id){
