@@ -3,8 +3,6 @@
 //namespace App\Database;
 
 // On "importe" PDO
-use PDO;
-use PDOException;
 
 class Database extends PDO
 {

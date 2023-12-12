@@ -9,7 +9,7 @@ class Account{
     private $id;
     private $email;
     private $telephone;
-    private $mdp;
+    public $mdp;
     private $type = 0;
 
     public function __construct(string $nom, string $prenom, int $id, string $email, string $telephone, string $mdp){
@@ -33,7 +33,7 @@ class Account{
     }
     public function create(Traitement $traitement, array $columns){
         if (empty($traitement -> find($this -> id))){
-        $args = ["'".$this -> nom."'","'".$this -> prenom."'","'".$this -> id."'","'".$this -> email."'","'".$this -> telephone."'","'".hash('sha256',$this -> mdp)."'", $this -> type,];
+        $args = ["'".$this -> nom."'","'".$this -> prenom."'","'".$this -> id."'","'".$this -> email."'","'".$this -> telephone."'","'".$this -> mdp."'", $this -> type,];
         $traitement -> insert($args, $columns);
         return 1;
     } else return 0;
@@ -41,14 +41,16 @@ class Account{
 }
     public static function verify(Traitement $traitement, string $id, string $mdp){
         $search = $traitement -> find($id);
-        if (!is_null($search)){
-            print_r($search);
-            print_r($search['mdp']);
-            print_r(hash('sha256', $mdp));
+        if (!empty($search)){
             if ($search['mdp'] == hash('sha256', $mdp)){
                 return $search;
-            } return 1;
-        } return 0;
+            }
+            else {
+
+             return 1;}
+        } 
+        else {
+            return 0;}
     }
     public static function getRows(){
         return array_keys(get_class_vars('Account'));

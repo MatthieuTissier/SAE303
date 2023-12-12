@@ -27,7 +27,7 @@ class Traitement extends Model {
 	
 	public function find(string $id) {
     // Exécuter la requête
-    return $this->requete("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
+    return $this->requete("SELECT * FROM {$this->table} WHERE id = '".$id."'")->fetch();
 	}
 	
 	public function findBy(array $criteres) {
