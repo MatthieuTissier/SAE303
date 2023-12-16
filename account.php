@@ -1,28 +1,30 @@
 <?php
+require "datatable.php";
 
-require "poo_traitement.php";
+class Account extends Datatable{
 
-class Account{
+    protected $nom;
+    protected $prenom;
+    protected $id;
+    protected $email;
+    protected $telephone;
+    protected $mdp;
+    protected $type = 0;
+    protected $traitement;
 
-    private $nom;
-    private $prenom;
-    private $id;
-    private $email;
-    private $telephone;
-    public $mdp;
-    private $type = 0;
 
-    public function __construct(string $nom, string $prenom, int $id, string $email, string $telephone, string $mdp){
+    public function __construct(string $nom, string $prenom, string $id, string $email, string $telephone, string $mdp){
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->id = $id;
         $this->email= $email;
         $this->telephone = $telephone;
         $this->mdp = $mdp;
+        $this->traitement = new Traitement("accounts");
 
 
     }
-    public function delete(Traitement $traitement){
+    /*public abstract function delete(Traitement $traitement){
         if ($traitement->find($this->id)){
             $traitement->delete($this->id); 
             return 1;
@@ -31,14 +33,17 @@ class Account{
         }
 
     }
-    public function create(Traitement $traitement, array $columns){
+    public function create(Traitement $traitement){
         if (empty($traitement -> find($this -> id))){
-        $args = ["'".$this -> nom."'","'".$this -> prenom."'","'".$this -> id."'","'".$this -> email."'","'".$this -> telephone."'","'".$this -> mdp."'", $this -> type,];
+            $values = get_object_vars($this);
+            foreach($values as $value){
+                $args[] = "'".$value."'";
+            }
         $traitement -> insert($args, $columns);
         return 1;
     } else return 0;
 
-}
+}*/
     public static function verify(Traitement $traitement, string $id, string $mdp){
         $search = $traitement -> find($id);
         if (!empty($search)){
@@ -51,8 +56,5 @@ class Account{
         } 
         else {
             return 0;}
-    }
-    public static function getRows(){
-        return array_keys(get_class_vars('Account'));
     } 
 }

@@ -48,11 +48,6 @@ class Traitement extends Model {
 	}
 	
 	public function insert(array $valeurs, array $colomns) {
-		foreach($valeurs as $valeur){
-			$valeur = "'".$valeur."'";
-		}
-
-    //Transformer le tableau "champs" en une chaine de caractères
     $liste_champs = implode(', ', $colomns);
     $liste_inter = implode(', ', $valeurs);
 
@@ -60,7 +55,7 @@ class Traitement extends Model {
     return $this->requete('INSERT INTO '.$this->table.' ('. $liste_champs.')VALUES('.$liste_inter.')');
 	}
 	
-	public function delete(int $id){
-		return $this->requete("DELETE FROM {$this->table} WHERE id = ?", [$id]);
+	public function delete(string $id){
+		return $this->requete("DELETE FROM {$this->table} WHERE id = "."'".$id."'");
 }
 }
