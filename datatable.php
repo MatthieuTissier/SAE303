@@ -25,4 +25,15 @@ public function create(){
     return 1;
 } else return 0;
 }
+public function UpdateTable(array $columns, array $values){
+    if(!empty($this -> traitement -> find($this -> id))){
+        $changes = " SET ";
+        foreach ($columns as $index => $column) {
+            $changes=$changes.$column." = '".$values[$index]."', ";
+        }
+        $changes = substr($changes,0,-2);
+        $this -> traitement -> update($changes,$this -> id);
+
+    }
+}
 }

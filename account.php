@@ -24,26 +24,6 @@ class Account extends Datatable{
 
 
     }
-    /*public abstract function delete(Traitement $traitement){
-        if ($traitement->find($this->id)){
-            $traitement->delete($this->id); 
-            return 1;
-        } else {
-            return 0;
-        }
-
-    }
-    public function create(Traitement $traitement){
-        if (empty($traitement -> find($this -> id))){
-            $values = get_object_vars($this);
-            foreach($values as $value){
-                $args[] = "'".$value."'";
-            }
-        $traitement -> insert($args, $columns);
-        return 1;
-    } else return 0;
-
-}*/
     public static function verify(Traitement $traitement, string $id, string $mdp){
         $search = $traitement -> find($id);
         if (!empty($search)){

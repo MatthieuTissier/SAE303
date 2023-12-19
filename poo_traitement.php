@@ -57,5 +57,10 @@ class Traitement extends Model {
 	
 	public function delete(string $id){
 		return $this->requete("DELETE FROM {$this->table} WHERE id = "."'".$id."'");
+	}
+	public function update(string $changes, string $id){
+		print_r("UPDATE ".$this -> table." ".$changes." WHERE id = "."'".$id."'");
+		return $this -> requete("UPDATE ".$this -> table." ".$changes." WHERE id = "."'".$id."'");
+	}
 }
-}
+
