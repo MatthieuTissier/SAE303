@@ -4,13 +4,15 @@
 .background2 {
     background-color: #EFEFEF;
 }
+.background3{
+    background-color: #3198D2;
+}
 .textcolor1 {
     color: #DFDFDF;
 }
 .textcolor2 {
     color: #0F0D71;
 }
-
-#event{
-    background-image: url("images_finales/fondevent.png") !important;
+.fond{
+    z-index: -1;
 }
