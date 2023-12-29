@@ -1,0 +1,16 @@
+.background1 {
+    background-color: #0F0D71;
+}
+.background2 {
+    background-color: #EFEFEF;
+}
+.textcolor1 {
+    color: #DFDFDF;
+}
+.textcolor2 {
+    color: #0F0D71;
+}
+
+#event{
+    background-image: url("images_finales/fondevent.png") !important;
+}
