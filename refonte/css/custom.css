@@ -13,3 +13,10 @@
 .textcolor2 {
     color: #0F0D71;
 }
+
+.translate-start {
+    transform: translateX(-2.5%) translateY(-25%) !important;
+}
+.translate-end {
+    transform: translateX(-97.5%) translateY(-75%) !important;
+}
