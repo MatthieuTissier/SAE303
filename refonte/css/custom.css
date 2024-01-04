@@ -14,6 +14,10 @@
     color: #0F0D71;
 }
 
+.w-10 {
+    width: 3% !important;
+}
+
 .translate-start {
     transform: translateX(-2.5%) translateY(-25%) !important;
 }
