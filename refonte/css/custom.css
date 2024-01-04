@@ -25,11 +25,11 @@
     transform: translateX(-97.5%) translateY(-75%) !important;
 }
 
-#reservation:hover {
+.btnbleu:hover {
     color: #DFDFDF !important;
     background-color: #0F0D71 !important;
 }
-#envoie:hover {
+.btnvert:hover {
     color: #DFDFDF;
     background-color: green;
 }
