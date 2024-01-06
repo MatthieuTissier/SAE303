@@ -40,7 +40,7 @@ class Traitement extends Model {
 			$valeurs[]= $valeur;
 		}
 
-		//Transformer le tableau en chaîne de caractères séparée par des AND
+		//Transformer le tableau en chaîne de caractères, séparée par des AND
 		$liste_champs = implode(' AND ', $champs);
 
 		// Exécuter la requête
