@@ -442,13 +442,13 @@
                 <h1 class="text-uppercase">Contactez nous !</h1>
                 <p>Laissez votre message, nous vous contacterons dans la semaine.</p>
 
-                <form class="row">
-                    <input placeholder="Nom" class="col-lg m-2 rounded">
-                    <input placeholder="Prénom" class="col-lg m-2 rounded">
-                    <input placeholder="Adresse mail" class="m-2 rounded">
-                    <input placeholder="Sujet" class="m-2 rounded">
-                    <textarea placeholder="Votre message" class="m-2 rounded"></textarea>
-                    <button class="rounded col-lg-3 my-2 btnvert mx-auto">Envoyer</button>
+                <form class="row" action = '../email.php' method = 'POST' name="envoi" required>
+                    <input placeholder="Nom" name = "nom" class="col-lg m-2 rounded" required>
+                    <input placeholder="Prénom" name = "prenom" class="col-lg m-2 rounded" required>
+                    <input placeholder="Adresse mail" name="email" class="m-2 rounded" required>
+                    <input placeholder="Sujet" name= "sujet" class="m-2 rounded" required>
+                    <textarea placeholder="Votre message" name ="message" class="m-2 rounded" required></textarea>
+                    <button type="submit" class="rounded col-lg-3 my-2 btnvert mx-auto" required>Envoyer</button>
                 </form>
                 
             </div>

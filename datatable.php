@@ -19,7 +19,7 @@ public function create(){
         array_pop($values);
         array_pop($columns);
         foreach($values as $value){
-            $args[] = "'".$value."'";
+            $args[] = "'".strval($value)."'";
         }
     ($this -> traitement) -> insert($args, $columns);
     return 1;

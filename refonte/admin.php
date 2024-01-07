@@ -24,35 +24,35 @@
 
         <nav class="navbar navbar-expand-lg py-5" id="customnav">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html#"><img src="images_finales/logoACF2L 1.png" alt="ACF2L"></a>
+                <a class="navbar-brand" href="index.php#"><img src="images_finales/logoACF2L 1.png" alt="ACF2L"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>  
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#activites">Nos activités</a>
+                            <a class="text-light text-decoration-none" href="index.php#activites">Nos activités</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#pedagogie">Moyens pédagogiques</a>
+                            <a class="text-light text-decoration-none" href="index.php#pedagogie">Moyens pédagogiques</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#ulm">Catégories d'ULM</a>
+                            <a class="text-light text-decoration-none" href="index.php#ulm">Catégories d'ULM</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#event">Evenement</a>
+                            <a class="text-light text-decoration-none" href="index.php#event">Evenement</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#equipe">L'équipe</a>
+                            <a class="text-light text-decoration-none" href="index.php#equipe">L'équipe</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#tarifs">Tarifs</a>
+                            <a class="text-light text-decoration-none" href="index.php#tarifs">Tarifs</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#galerie">Galerie</a>
+                            <a class="text-light text-decoration-none" href="index.php#galerie">Galerie</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="text-light text-decoration-none" href="index.html#contact">Contact</a>
+                            <a class="text-light text-decoration-none" href="index.php#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -98,7 +98,7 @@
                         <div class="row border-top border-dark">
                             <form class="col mx-1">
                                 <label for="date">Date :</label>
-                                <input id="date" class="rounded">
+                                <input id="date" class="rounded" type="date">
                             </form>
                             <button class="col btn-success btn my-auto mx-1">
                                 Valider
