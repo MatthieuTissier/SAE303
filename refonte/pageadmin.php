@@ -1,3 +1,7 @@
+<?php if ( empty(session_id()) ) session_start();
+if(!isset($_SESSION["admin"])){
+    header('location: connexion.php');
+}  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,49 +70,59 @@
                 <h1>En attente</h1>
 
                 <div class="rounded text-start background1 p-1">
+                <?php
+                    require "classes/poo_traitement.php";
 
-                    <div class="m-3 text-dark background4 rounded p-3">
-                        <div class="row">
-                            <p class="col-3">Client :</p>
-                            <p class="col">(M./Mme.) (Prénom) (Nom)</p>
+                    $trait = new Traitement("reservation");
+                    $list = $trait -> findBy(array("traitementP" => "0"));
+                    foreach($list as $value){
+                        echo("<div class='m-3 text-dark background4 rounded p-3'>
+                        <div class='row'>
+                            <p class='col-3'>Client :</p>
+                            <p class='col'>".$value["civilite"]." ".$value["prenom"]." ".$value["nom"]."</p>
                         </div>
-                        <div class="row border-top border-dark">
-                            <p class="col-3">Type de séance :</p>
-                            <p class="col">(stage d'initiation / stage d'initiation en groupe / brevet de pilote)</p>
+                        <div class='row border-top border-dark'>
+                            <p class='col-3'>Type de séance :</p>
+                            <p class='col'>".$value["type"]."</p>
                         </div>
-                        <div class="row border-top border-dark">
-                            <div class="col-lg">
-                                <div class="row">  
-                                    <p class="col-7">Nombre d'enfants :</p>
-                                    <p class="col">(Nombre d'enfants)</p>
+                        <div class='row border-top border-dark'>
+                            <div class='col-lg'>
+                                <div class='row'>  
+                                    <p class='col-7'>Nombre d’enfants :</p>
+                                    <p class='col'>".$value["nbenfant"]."</p>
                                 </div>
                                 
                             </div>
-                            <div class="col-lg">
-                                <div class="row">
-                                    <p class="col-7">Nombre d'adultes :</p>
-                                    <p class="col">(Nombre d'adultes)</p>
+                            <div class='col-lg'>
+                                <div class='row'>
+                                    <p class='col-7'>Nombre d’adultes :</p>
+                                    <p class='col'>".$value["nbadulte"]."</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="border-top border-dark">
-                            <p class="my-0">Personnes handicapées :</p>
-                            <p>(nombre de personnes) (handicap)</p>
+                        <div class='border-top border-dark'>
+                            <p class='my-0'>Personnes handicapées :</p>
+                            <p>".$value["handicap"]."</p>
                         </div>
-                        <div class="row border-top border-dark">
-                            <form class="col mx-1">
-                                <label for="date">Date :</label>
-                                <input id="date" class="rounded" type="date">
+                        <div class='row border-top border-dark'>
+                            <form class='col mx-1' action ='gestionAdmin.php' method='post' id =".$value["id"].">
+                                <label for='date'>Date :</label>
+                                <input id='date' class='rounded' type='date' form=".$value["id"]." name = 'date' required>
+                                <input type='hidden' value=".$value["id"]." form=".$value["id"]." name= 'id' >
                             </form>
-                            <button class="col btn-success btn my-auto mx-1">
+                            <button class='col btn-success btn my-auto mx-1' name='state' value=1 form=".$value["id"].">
                                 Valider
                             </button>
-                            <button class="col btn-danger btn my-auto mx-1">
+                            <button class='col btn-danger btn my-auto mx-1' value = 0 name='state' form=".$value["id"]."N>
                                 Rejeter
                             </button>
+                            <form action='gestionAdmin.php' method='POST' id=".$value["id"]."N></form>
+                            <input type='hidden' value=".$value["id"]." form=".$value["id"]."N name='id'>
                         </div>
                     
-                    </div>
+                    </div>");  
+                        };
+                        ?>
 
                 </div>
 
@@ -120,39 +134,44 @@
 
                 <div class="rounded text-start background1 p-1">
 
-                    <div class="m-3 text-dark background4 rounded p-3">
-                        <div class="row">
-                            <p class="col-3">Client :</p>
-                            <p class="col">(M./Mme.) (Prénom) (Nom)</p>
+                <?php
+                    $list = $trait -> findBy(array("traitementP" => "1"));
+                    foreach($list as $value){
+                    echo("
+                    <div class='m-3 text-dark background4 rounded p-3'>
+                        <div class='row'>
+                            <p class='col-3'>Client :</p>
+                            <p class='col'>".$value["civilite"]." ".$value["prenom"]." ".$value["nom"]."</p>
                         </div>
-                        <div class="row border-top border-dark">
-                            <p class="col-3">Type de séance :</p>
-                            <p class="col">(stage d'initiation / stage d'initiation en groupe / brevet de pilote)</p>
+                        <div class='row border-top border-dark'>
+                            <p class='col-3'>Type de séance :</p>
+                            <p class='col'>".$value["type"]."</p>
                         </div>
-                        <div class="row border-top border-dark">
-                            <div class="col-lg">
-                                <div class="row">  
-                                    <p class="col-7">Nombre d'enfants :</p>
-                                    <p class="col">(Nombre d'enfants)</p>
+                        <div class='row border-top border-dark'>
+                            <div class='col-lg'>
+                                <div class='row'>  
+                                    <p class='col-7'>Nombre d'enfants :</p>
+                                    <p class='col'>".$value["nbenfant"]."</p>
                                 </div>
                                 
                             </div>
-                            <div class="col-lg">
-                                <div class="row">
-                                    <p class="col-7">Nombre d'adultes :</p>
-                                    <p class="col">(Nombre d'adultes)</p>
+                            <div class='col-lg'>
+                                <div class='row'>
+                                    <p class='col-7'>Nombre d'adultes :</p>
+                                    <p class='col'>".$value["nbadulte"]."</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="border-top border-dark">
-                            <p class="my-0">Personnes handicapées :</p>
-                            <p>(nombre de personnes) (handicap)</p>
+                        <div class='border-top border-dark'>
+                            <p class='my-0'>Personnes handicapées :</p>
+                            <p>".$value["handicap"]."</p>
                         </div>
-                        <div class="row border-top border-dark">
-                            <p class="col-2">Date :</p>
-                            <p class="col">(Date fixée)</p>
+                        <div class='row border-top border-dark'>
+                            <p class='col-2'>Date :</p>
+                            <p class='col'>".$value["date"]."</p>
                         </div>
-                    </div>
+                    </div>");};
+                    ?>
 
                 </div>
 

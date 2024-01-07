@@ -362,7 +362,7 @@
             </div>
         </div>
         <div class="justify-content-center py-5">
-            <button class="p-1 mx-auto rounded btnbleu" onclick="window.location.href='reservation.html';">Réservez votre activité ici</button>
+            <button class="p-1 mx-auto rounded btnbleu" onclick="window.location.href='reservation.php'">Réservez votre activité ici</button>
         </div>
 
     </section>
