@@ -11,7 +11,7 @@
         <button type="submit" name="GO" form='form' id="bouton2">OK</button>
 <?php
 
-require "account.php";
+require "classes/account.php";
 $traitement = new Traitement("accounts");
 if (isset($_POST["id"]) && isset($_POST["mdp"])){
     $_SESSION["account"] = Account::verify($traitement, $_POST["id"],$_POST["mdp"]);

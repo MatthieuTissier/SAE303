@@ -442,7 +442,7 @@
                 <h1 class="text-uppercase">Contactez nous !</h1>
                 <p>Laissez votre message, nous vous contacterons dans la semaine.</p>
 
-                <form class="row" action = '../email.php' method = 'POST' name="envoi" required>
+                <form class="row" action = 'email.php' method = 'POST' name="envoi" required>
                     <input placeholder="Nom" name = "nom" class="col-lg m-2 rounded" required>
                     <input placeholder="Prénom" name = "prenom" class="col-lg m-2 rounded" required>
                     <input placeholder="Adresse mail" name="email" class="m-2 rounded" required>

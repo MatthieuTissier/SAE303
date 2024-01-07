@@ -1,4 +1,7 @@
 <?php
+if(!isset($_POST)){
+    header("index.php");
+}
 $destinataire = "prot.tom91@gmail.com";
 $sujet = '[Sans sujet]';
 $message =  "[Le contenu du message est vide]";
@@ -26,9 +29,9 @@ else {
 }
 if(mail($destinataire, $sujet, $message, $infos)){
     $_SESSION["success"] = 1;
-    header("./refonte/index.html");
+    header("index.php");
 } else{
     $_SESSION["success"] = 0;
-    header("./refonte/index.html");
+    header("index.php");
 }
 ?>

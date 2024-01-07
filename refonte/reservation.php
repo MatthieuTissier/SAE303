@@ -61,7 +61,7 @@
 
         <div class="py-5">
 
-            <form class="row text-start mx-5">
+            <form class="row text-start mx-5" method="POST" name="reservationform" action="reservationAdd.php">
 
                 <h1 class="my-5 text-center text-uppercase">Réserver une offre</h1>
 
@@ -69,84 +69,88 @@
 
                 <div class="col m-3">
                     <div>
-                        <input type="radio" name="civilite" id="homme">
+                        <input type="radio" name="civilite" id="homme" value="homme">
                         <label for="homme">M.</label>
                     </div>
                     <div>
-                        <input type="radio" name="civilite" id="femme">
+                        <input type="radio" name="civilite" id="femme" value="homme">
                         <label for="femme">Mme.</label>
                     </div>
                 </div>
                 <div class="col-5 m-3">
                     <label for="prenom">Prénom*</label>
-                    <input class="rounded w-100" id="prenom">
+                    <input class="rounded w-100" id="prenom" name="prenom">
                 </div>
                 <div class="col-5 m-3">
                     <label for="nom">Nom*</label>
-                    <input class="rounded w-100" id="snom">
+                    <input class="rounded w-100" id="snom" name="nom">
                 </div>
                 
                 <div class="col-4 m-3">
-                    <label for="age">Date de naissance</label>
-                    <input class="rounded w-100" id="age">
+                    <label for="naissance">Date de naissance</label>
+                    <input type="date" class="rounded w-100" id="age" name="naissance">
                 </div>
                 <div class="col m-3">
-                    <label for="mail">Adresse Mail*</label>
-                    <input class="rounded w-100" id="mail">
+                    <label for="email">Adresse Mail*</label>
+                    <input class="rounded w-100" id="mail" name="email">
                 </div>
 
                 <div class="col-12 m-3">
                     <label for="adresse">Adresse</label>
                     <div id="row adresse w-100">
-                        <input placeholder="Numéro" class="rounded col">
-                        <input placeholder="Rue" class="rounded col-4">
-                        <input placeholder="Ville" class="rounded col-4">
-                        <input placeholder="Code postal" class="rounded col">
+                        <input placeholder="Numéro" class="rounded col" name="numero">
+                        <input placeholder="Rue" class="rounded col-4" name="rue">
+                        <input placeholder="Ville" class="rounded col-4" name="ville">
+                        <input placeholder="Code postal" class="rounded col" name="codepostal">
                     </div>
                 </div>
 
                 <div class="col-5 m-3">
                     <label for="tel">Téléphone portable</label>
-                    <input class="rounded w-100" id="tel">
+                    <input class="rounded w-100" id="tel" name="tel">
                 </div>
                 <div class="col m-3">
                     <label for="famille">Situation familiale</label>
-                    <select class="rounded col w-100" id="famille">
-                        <option></option>
+                    <select class="rounded col w-100" id="famille" name="famille">
+                        <option value="celibataire">Célibataire</option>
+                        <option value="marie">Marié</option>
+                        <option value="veuf">Veuf</option>
+                        <option value="jfc">je suis jean françois copé</option>
                     </select>
                 </div>
                 <div class="col m-3">
-                    <label for="charges">Personnes à charges</label>
-                    <input class="rounded w-100" id="charges">
+                    <label for="charge">Personnes à charges</label>
+                    <input class="rounded w-100" id="charges" name="charge">
                 </div>
 
                 <h1 class="my-5 text-center">Types d'activités</h1>
 
                 <div class="mx-3">
-                    <input type="radio" name="activite" id="stageindiv">
+                    <input type="radio" name="activite" id="stageindiv" value="stagesolo">
                     <label for="stageindiv">Stage d'initiation</label>
                 </div>
                 <div class="mx-3">
-                    <input type="radio" name="activite" id="stagegr">
+                    <input type="radio" name="activite" id="stagegr" value="stagegroupe">
                     <label for="stagegr">Stage d'initiation en groupe</label>
                 </div>
                 <div class="mx-3">
-                    <input type="radio" name="activite" id="brevet">
+                    <input type="radio" name="activite" id="brevet" value="brevet">
                     <label for="brevet">Brevet de pilote</label>
                 </div>
 
                 <div class="col m-3">
-                    <label for="enfants">Nombre d'enfants</label>
-                    <input class="rounded w-100" id="enfants">
+                    <label for="nbenfant">Nombre d'enfants</label>
+                    <input class="rounded w-100" id="enfants" name="nbenfant">
                 </div>
                 <div class="col m-3">
-                    <label for="adultes">Nombre d'adultes</label>
-                    <input class="rounded w-100" id="adultes">
+                    <label for="nbadulte">Nombre d'adultes</label>
+                    <input class="rounded w-100" id="adultes" name="nbadulte">
                 </div>
 
                 <div class="col-12 m-3">
                     <label for="handicap">Présence d'handicap(s) (indiquez le nombre de personnes et le type d'handicap)</label>
-                    <input class="rounded w-100" id="handicap">
+                    <input class="rounded w-100" id="handicap" name="handicap">
+                    <button>submit</button>
                 </div>
 
             </form>
@@ -178,13 +182,13 @@
                 <h1 class="text-uppercase">Contactez nous !</h1>
                 <p>Laissez votre message, nous vous contacterons dans la semaine.</p>
 
-                <form class="row">
-                    <input placeholder="Nom" class="col-lg-6 rounded">
-                    <input placeholder="Prénom" class="col-lg-6 rounded">
-                    <input placeholder="Adresse mail" class="rounded">
-                    <input placeholder="Sujet" class="rounded">
-                    <textarea placeholder="Votre message" class="rounded"></textarea>
-                    <button class="rounded col-lg-3 btnvert">Envoyer</button>
+                <form class="row" action = 'email.php' method = 'POST' name="envoi" required>
+                    <input placeholder="Nom" name = "nom" class="col-lg m-2 rounded" required>
+                    <input placeholder="Prénom" name = "prenom" class="col-lg m-2 rounded" required>
+                    <input placeholder="Adresse mail" name="email" class="m-2 rounded" required>
+                    <input placeholder="Sujet" name= "sujet" class="m-2 rounded" required>
+                    <textarea placeholder="Votre message" name ="message" class="m-2 rounded" required></textarea>
+                    <button type="submit" class="rounded col-lg-3 my-2 btnvert mx-auto" required>Envoyer</button>
                 </form>
                 
             </div>
