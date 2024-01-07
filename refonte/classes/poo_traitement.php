@@ -36,15 +36,17 @@ class Traitement extends Model {
 
 		//Boucler pour "éclater le tableau"
 		foreach($criteres as $champ => $valeur){
-			$champs[] = "$champ = ?";
+			$champs[] = $champ;
 			$valeurs[]= $valeur;
 		}
 
 		//Transformer le tableau en chaîne de caractères, séparée par des AND
 		$liste_champs = implode(' AND ', $champs);
+		$liste_valeurs = implode('=',$valeurs);
+		
 
 		// Exécuter la requête
-		return $this->requete("SELECT * FROM {$this->table} WHERE $liste_champs", $valeurs)->fetchAll();
+		return $this->requete("SELECT * FROM {$this->table} WHERE $liste_champs = $liste_valeurs")->fetchAll();
 	}
 	
 	public function insert(array $valeurs, array $colomns) {
@@ -59,8 +61,7 @@ class Traitement extends Model {
 		return $this->requete("DELETE FROM {$this->table} WHERE id = "."'".$id."'");
 	}
 	public function update(string $changes, string $id){
-		print_r("UPDATE ".$this -> table." ".$changes." WHERE id = "."'".$id."'");
-		return $this -> requete("UPDATE ".$this -> table." ".$changes." WHERE id = "."'".$id."'");
+		return $this -> requete("UPDATE ".$this -> table." SET ".$changes." WHERE id = "."'".$id."'");
 	}
 }
 

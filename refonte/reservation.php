@@ -65,53 +65,51 @@
 
                 <h1 class="my-5 text-center text-uppercase">Réserver une offre</h1>
 
-                <p class="m-3">* champs obligatoires</p>
-
                 <div class="col m-3">
                     <div>
-                        <input type="radio" name="civilite" id="homme" value="homme">
+                        <input type="radio" name="civilite" id="homme" value="Mr" required>
                         <label for="homme">M.</label>
                     </div>
                     <div>
-                        <input type="radio" name="civilite" id="femme" value="homme">
+                        <input type="radio" name="civilite" id="femme" value="Mme">
                         <label for="femme">Mme.</label>
                     </div>
                 </div>
                 <div class="col-5 m-3">
-                    <label for="prenom">Prénom*</label>
-                    <input class="rounded w-100" id="prenom" name="prenom">
+                    <label for="prenom">Prénom</label>
+                    <input class="rounded w-100" id="prenom" name="prenom" required>
                 </div>
                 <div class="col-5 m-3">
-                    <label for="nom">Nom*</label>
-                    <input class="rounded w-100" id="snom" name="nom">
+                    <label for="nom">Nom</label>
+                    <input class="rounded w-100" id="snom" name="nom"required>
                 </div>
                 
                 <div class="col-4 m-3">
                     <label for="naissance">Date de naissance</label>
-                    <input type="date" class="rounded w-100" id="age" name="naissance">
+                    <input type="date" class="rounded w-100" id="age" name="naissance" required>
                 </div>
                 <div class="col m-3">
                     <label for="email">Adresse Mail*</label>
-                    <input class="rounded w-100" id="mail" name="email">
+                    <input class="rounded w-100" id="mail" name="email" required>
                 </div>
 
                 <div class="col-12 m-3">
                     <label for="adresse">Adresse</label>
                     <div id="row adresse w-100">
-                        <input placeholder="Numéro" class="rounded col" name="numero">
-                        <input placeholder="Rue" class="rounded col-4" name="rue">
-                        <input placeholder="Ville" class="rounded col-4" name="ville">
-                        <input placeholder="Code postal" class="rounded col" name="codepostal">
+                        <input placeholder="Numéro" class="rounded col" name="numero" required>
+                        <input placeholder="Rue" class="rounded col-4" name="rue" required>
+                        <input placeholder="Ville" class="rounded col-4" name="ville" required>
+                        <input placeholder="Code postal" class="rounded col" name="codepostal" required>
                     </div>
                 </div>
 
                 <div class="col-5 m-3">
                     <label for="tel">Téléphone portable</label>
-                    <input class="rounded w-100" id="tel" name="tel">
+                    <input class="rounded w-100" id="tel" name="tel" pattern='[0-9]{10}' REQUIRED>
                 </div>
                 <div class="col m-3">
                     <label for="famille">Situation familiale</label>
-                    <select class="rounded col w-100" id="famille" name="famille">
+                    <select class="rounded col w-100" id="famille" name="famille" required>
                         <option value="celibataire">Célibataire</option>
                         <option value="marie">Marié</option>
                         <option value="veuf">Veuf</option>
@@ -120,31 +118,31 @@
                 </div>
                 <div class="col m-3">
                     <label for="charge">Personnes à charges</label>
-                    <input class="rounded w-100" id="charges" name="charge">
+                    <input type ="number" class="rounded w-100" id="charges" name="charge" pattern='[0-9]{2}' required>
                 </div>
 
                 <h1 class="my-5 text-center">Types d'activités</h1>
 
                 <div class="mx-3">
-                    <input type="radio" name="activite" id="stageindiv" value="stagesolo">
+                    <input type="radio" name="activite" id="stageindiv" value="stagesolo" required>
                     <label for="stageindiv">Stage d'initiation</label>
                 </div>
                 <div class="mx-3">
-                    <input type="radio" name="activite" id="stagegr" value="stagegroupe">
+                    <input type="radio" name="activite" id="stagegr" value="stagegroupe" required>
                     <label for="stagegr">Stage d'initiation en groupe</label>
                 </div>
                 <div class="mx-3">
-                    <input type="radio" name="activite" id="brevet" value="brevet">
+                    <input type="radio" name="activite" id="brevet" value="brevet" required>
                     <label for="brevet">Brevet de pilote</label>
                 </div>
 
                 <div class="col m-3">
                     <label for="nbenfant">Nombre d'enfants</label>
-                    <input class="rounded w-100" id="enfants" name="nbenfant">
+                    <input type='number' class="rounded w-100" id="enfants" name="nbenfant"required>
                 </div>
                 <div class="col m-3">
                     <label for="nbadulte">Nombre d'adultes</label>
-                    <input class="rounded w-100" id="adultes" name="nbadulte">
+                    <input type='number' class="rounded w-100" id="adultes" name="nbadulte"  required >
                 </div>
 
                 <div class="col-12 m-3">

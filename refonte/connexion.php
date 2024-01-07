@@ -1,22 +1,19 @@
-<?php if ( empty(session_id()) ) session_start(); ?>
-
-<form id="form" action="connexion.php" method="POST">
-            <section class="row">
-                <div>
-                    <input type="text" name="id" placeholder="ID" REQUIRED>
-                </div>
-                <div>
-                    <input type="text" name="mdp" placeholder="Mot de passe" required>
-        </form>
-        <button type="submit" name="GO" form='form' id="bouton2">OK</button>
-<?php
-
-require "classes/account.php";
-$traitement = new Traitement("accounts");
-if (isset($_POST["id"]) && isset($_POST["mdp"])){
-    $_SESSION["account"] = Account::verify($traitement, $_POST["id"],$_POST["mdp"]);
-    if(gettype($_SESSION["account"])== "array"){
-        print_r($_SESSION);
-    }
-}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/connexion.css">
+    <title>ACF2L</title>
+</head>
+<body>
+<form name="formulaire" action="phpconnexion.php" method="POST" id="formulaire" style="margin-top: 10em;">
+        <div id="inscription" style="font-size: x-large;"> Connexion </div>
+        <input class="caseformulaire" type="text" name="id" placeholder="Login" required>
+        <input class="caseformulaire" type="password" name="mdp" placeholder="Mot de passe" required>
+        <div id=goconnexion>
+        </div>
+        <input type="submit" name="connect" value="Se connecter" id="bouton">
+</form>
