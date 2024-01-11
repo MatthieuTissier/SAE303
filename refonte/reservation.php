@@ -61,6 +61,10 @@
 
         <div class="py-5">
 
+        <div class="row justify-content-center">
+
+        <div class="col-lg-11">
+
             <form class="row text-start mx-5" method="POST" name="reservationform" action="reservationAdd.php">
 
                 <h1 class="my-5 text-center text-uppercase">Réserver une offre</h1>
@@ -95,7 +99,7 @@
 
                 <div class="col-12 m-3">
                     <label for="adresse">Adresse</label>
-                    <div id="row adresse w-100">
+                    <div id="row adresse">
                         <input placeholder="Numéro" class="rounded col" name="numero" required>
                         <input placeholder="Rue" class="rounded col-4" name="rue" required>
                         <input placeholder="Ville" class="rounded col-4" name="ville" required>
@@ -155,6 +159,10 @@
 
         </div>
 
+        </div>
+
+        </div>
+
     </section>
 
     <footer class="container-fluid mx-0 py-5 text-light text-center background1" id="contact">
@@ -163,15 +171,15 @@
                 <h1 class="text-uppercase">Informations</h1>
                 <p>Association enregistrée n°04674 - - Agrément n° AS70986858</p>
                 <div class="my-3 text-start">
-                    <img src="images_finales/icon8.svg" class="w-10 mx-3">
+                    <img src="images_finales/icon8.svg" class="w-5 mx-3">
                     <p class="d-inline">acf2l@gmail.com</p>
                 </div>
                 <div class="my-3 text-start">
-                    <img src="images_finales/icon7.svg" class="w-10 mx-3">
+                    <img src="images_finales/icon7.svg" class="w-5 mx-3">
                     <p class="d-inline">+33 01 60 56 60 60</p>
                 </div>
                 <div class="my-3 text-start">
-                    <img src="images_finales/icon9.svg" class="w-10 mx-3">
+                    <img src="images_finales/icon9.svg" class="w-5 mx-3">
                     <p class="d-inline">62, Avenue de la République, 70200 Lure</p>
                 </div>
                 <img src="images_finales/logoACF2L 1.png">
